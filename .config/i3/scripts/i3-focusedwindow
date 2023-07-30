@@ -1,0 +1,12 @@
+#!/bin/bash
+#author : darkxx
+workspace=$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).name')
+title=$(xdotool getactivewindow getwindowname)
+focusedwindow="[$workspace] $title"
+
+if [[ ${#focusedwindow} -gt $1 ]]; then
+    focusedwindow=${focusedwindow:0:$(($1 - 3))}...
+fi
+
+echo "$focusedwindow"
+
