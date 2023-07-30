@@ -21,6 +21,7 @@ To use these dotfiles on your system, follow the steps below:
 2. **Zsh Configuration:**
 
    - Copy the `~/.zshrc` file to your home directory:
+
      ```
      cp zsh/.zshrc ~/
      ```
@@ -28,6 +29,7 @@ To use these dotfiles on your system, follow the steps below:
 3. **Fish Configuration:**
 
    - Copy the `fish/config.fish` file to your fish configuration directory:
+
      ```
      cp fish/config.fish ~/.config/fish/
      ```
@@ -35,6 +37,7 @@ To use these dotfiles on your system, follow the steps below:
 4. **Qtile Configuration:**
 
    - Copy the `qtile/` directory to your Qtile configuration directory:
+
      ```
      cp -r qtile/ ~/.config/
      ```
@@ -42,6 +45,7 @@ To use these dotfiles on your system, follow the steps below:
 5. **i3wm Configuration:**
 
    - Copy the `i3/` directory to your i3wm configuration directory:
+   
      ```
      cp -r i3wm/ ~/.config/
      ```
