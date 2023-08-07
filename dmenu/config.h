@@ -20,7 +20,7 @@ static const char *colors[SchemeLast][2] = {
 	[SchemeOut] = { "#ce9df2", "#1e1e2e" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 5;
+static unsigned int lines      = 8;
 
 /*
  * Characters not considered part of a word while deleting words
