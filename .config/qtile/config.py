@@ -203,7 +203,7 @@ speaker_widget = widget.TextBox(
 )
 clock_widget=widget.TextBox(
     text="",
-    foreground="#a45aed",
+    foreground="#fa0c8f",
     fontsize=12,
     padding=5,
 )
@@ -266,7 +266,7 @@ screens = [
                 # sep2,
                 # Spacer_,
                 separator_widget,
-                kernel_,
+                # kernel_,
                 Spacer_,
                 speaker_widget,
                 widget.PulseVolume(
@@ -295,7 +295,7 @@ screens = [
                 Spacer_,
                 clock_widget,
                 widget.Clock(format="%H:%M %p",
-                             foreground="#a45aed"
+                             foreground="#fa0c8f"
                              ),
                 Spacer_,
                 widget.Systray(),
