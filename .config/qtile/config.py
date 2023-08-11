@@ -160,7 +160,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono Semibold",
+    font="Ubuntu Mono Semibold",  
     fontsize=12,
     padding=1,
 )
@@ -203,7 +203,7 @@ speaker_widget = widget.TextBox(
 )
 clock_widget=widget.TextBox(
     text="",
-    foreground="#fa0c8f",
+    foreground="#51afef",
     fontsize=12,
     padding=5,
 )
@@ -217,8 +217,8 @@ Spacer_ =widget.TextBox(
         text=" ",
         )
 kernel_ = widget.TextBox(
-    text = " {}".format(getKernelVersion()),
-    foreground = "#d2bd97",
+    text = "  {}".format(getKernelVersion()),
+    foreground = "#a9a1e1",
     background ="#1e1e2e",
     padding =5,
 )
@@ -237,7 +237,15 @@ screens = [
                 # ),
                 widget.GroupBox(
                     the_current_screen_border='#6a0c8a',
-                    inactive='#6a0c8a'
+                    inactive='#6a0c8a',
+                    active="#ddd",
+                    margin_y =3,
+                    margin_x =0,
+                    padding_y=5,
+                    padding_x=3,
+                    highlight_method="line",
+                    highlight_color="#1e1e2e",
+                    background="#1e1e2e"
                     ),
                 separator_widget,
                 widget.CurrentLayoutIcon(
@@ -247,7 +255,7 @@ screens = [
                     padding = 0 , 
                     scale= 0.7
                 ),
-                widget.CurrentLayout(foreground="#6bfff3"),
+                widget.CurrentLayout(foreground="#ffffff"),
                 separator_widget,
                 widget.Prompt(),
                 sep2,
@@ -266,7 +274,7 @@ screens = [
                 # sep2,
                 # Spacer_,
                 separator_widget,
-                # kernel_,
+                kernel_,
                 Spacer_,
                 speaker_widget,
                 widget.PulseVolume(
@@ -277,7 +285,7 @@ screens = [
                 widget.Net(interface="wlan0",
                            format = "  {down} ↓↑ {up}",
                            padding = 2 ,
-                           foreground = "#8ff798",
+                           foreground = "#ff6c6b",
                            background = "#1e1e2e",
                            ),
                 Spacer_,
@@ -289,13 +297,13 @@ screens = [
                     discharge_char = ' ',
                     low_percentage = 0.1 ,
                     hide_threshold = None ,
-                    foreground="#bf78d1"
+                    foreground="#98be65"
                     ),
                 Spacer_,
                 Spacer_,
                 clock_widget,
                 widget.Clock(format="%H:%M %p",
-                             foreground="#fa0c8f"
+                             foreground="#51afef"
                              ),
                 Spacer_,
                 widget.Systray(),
