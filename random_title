@@ -1,0 +1,12 @@
+#!/bin/bash
+
+words=("L1nux" "cyb3r" "Darkxx" "Tuxify" "Arch Btw !!" "Gitchit" "Doors 11" "th3v3z" "AI" "buffer")
+
+# Generate a random index
+random_index=$(( RANDOM % ${#words[@]} ))
+
+# Get the random tech word
+word=${words[$random_index]}
+
+# Display the tech word in figlet font
+figlet -f new "$word"

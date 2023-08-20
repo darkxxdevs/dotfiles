@@ -13,7 +13,7 @@
 
 #!/bin/bash
 # starut p with my figlet
-figlet -f new "#Darkxx"
+~/random_title
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
