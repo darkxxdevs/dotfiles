@@ -24,9 +24,6 @@ terminal = "kitty"
 def getKernelVersion():
     return platform.release()
 
-# running dmenu
-# def spawn_dmenu(cmd):
-#       qtile.cmd_spawn("dmenu_run -p 'Run:' -nb '#1a1a1a' -nf '#dcdccc' -sb '#8f8f8f' -sf '#dcdccc' -fn 'Monospace-14'")  # Replace with your preferred dmenu command
 
 # definiton of brigness control
 
@@ -38,6 +35,15 @@ def autostart():
     # Set the initial brightness level
     brightnessctl_cmd = "brightnessctl s 50%"  # Adjust the value as needed
     subprocess.Popen(brightnessctl_cmd.split())
+    subprocess.Popen(["nm-applet"])
+
+
+##### STARTUP PROGRAMS Via autostart script#####
+
+@hook.subscribe.startup_once
+def start_once():
+	home = os.path.expanduser("~")
+	subprocess.call([home + "/.config/qtile/autostart.sh"])
 
 # floating laoyout config
 
@@ -114,7 +120,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["DEV", "SYS", "WID", "SET" , "GWM", "GFX ",]
+group_labels = ["www", "sys", "vid", "dev" , "mus", "gfx",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
@@ -160,7 +166,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Ubuntu Mono Semibold",  
+    font="JetBrains Mono Nerd Font Bold ",  
     fontsize=12,
     padding=1,
 )
@@ -217,7 +223,7 @@ Spacer_ =widget.TextBox(
         text=" ",
         )
 kernel_ = widget.TextBox(
-    text = "  {}".format(getKernelVersion()),
+    text = " {}".format(getKernelVersion()),
     foreground = "#a9a1e1",
     background ="#1e1e2e",
     padding =5,
