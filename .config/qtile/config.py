@@ -10,6 +10,7 @@ import os
 import platform
 import psutil
 import subprocess
+import webbrowser
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -55,6 +56,10 @@ class FloatingLayout(layout.floating.Floating):
 os.system("picom --config ~/.config/picom/picom.conf &")
 #  volume controls
 
+
+#open github
+def open_github():
+     webbrowser.open_new_tab("https://github.com/darkxxdevs")
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -120,7 +125,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["www", "sys", "vid", "dev" , "mus", "gfx",]
+group_labels = ["I", "II", "III", "IV" , "V", "VI",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
@@ -149,12 +154,12 @@ layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    layout.Stack(num_stacks=2, border_focus="#fc05ec",
+    layout.Stack(num_stacks=2, border_focus="#ffffff",
                  border_normal="#9e8d9d", border_width=2),
     layout.Bsp(),
     layout.Matrix(),
-    layout.MonadTall(border_focus="#c30fd1",
-                     border_normal="#9e8d9d", border_width=3, margin=5),
+    layout.MonadTall(border_focus="#fc05ec",
+                     border_normal="#9e8d9d", border_width=2, margin=7),
     layout.MonadWide(),
     layout.RatioTile(border_focus="#fc05ec",
                      border_normal="#9e8d9d", border_width=2),
@@ -181,10 +186,13 @@ separator_widget = widget.TextBox(
     background="#1e1e2e"
 )
 icon_=widget.TextBox(
-        text="  ",
+        text="󰊢 ",
         fontsize=20,
-        padding=5,
-        foreground="#dddddd"
+        padding=2,
+        foreground="#dddddd",
+        mouse_callbacks={
+             "Button1":open_github
+        }
         )
 sep3 = widget.TextBox(
     text="]",
