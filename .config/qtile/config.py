@@ -1,10 +1,11 @@
-#  ██████╗ ████████╗██╗██╗     ███████╗
-# ██╔═══██╗╚══██╔══╝██║██║     ██╔════╝
-# ██║   ██║   ██║   ██║██║     █████╗  
-# ██║▄▄ ██║   ██║   ██║██║     ██╔══╝  
-# ╚██████╔╝   ██║   ██║███████╗███████╗
-#  ╚══▀▀═╝    ╚═╝   ╚═╝╚══════╝╚══════╝
-############################################################################################################################################
+########################################
+#  ██████╗ ████████╗██╗██╗     ███████╗#
+# ██╔═══██╗╚══██╔══╝██║██║     ██╔════╝#
+# ██║   ██║   ██║   ██║██║     █████╗  #
+# ██║▄▄ ██║   ██║   ██║██║     ██╔══╝  #
+# ╚██████╔╝   ██║   ██║███████╗███████╗#
+#  ╚══▀▀═╝    ╚═╝   ╚═╝╚══════╝╚══════╝#
+########################################
 ## imports ##
 import os
 import platform
@@ -15,38 +16,36 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-from libqtile.widget import CPUGraph, Volume, base, TextBox , Battery 
-from qtile_extras.widget.decorations import RectDecoration , PowerLineDecoration , BorderDecoration
-# setting up modkey and default terminal   
+from libqtile.widget import CPUGraph, Volume, base, TextBox, Battery
+from qtile_extras.widget.decorations import RectDecoration, PowerLineDecoration, BorderDecoration
 
-mod = "mod4"
-terminal = "kitty"
+mod = "mod4"  # -> setting mod key to windows key
+terminal = "kitty"  # -> default terminal setting
+
+# ->> setting the  function to get the latest kernel version
+
 
 def getKernelVersion():
     return platform.release()
 
 
 # definiton of brigness control
-
-
 @hook.subscribe.startup_once
 def autostart():
-    # ... (other autostart programs)
-
-    # Set the initial brightness level
-    brightnessctl_cmd = "brightnessctl s 50%"  # Adjust the value as needed
+    brightnessctl_cmd = "brightnessctl s 50%"
     subprocess.Popen(brightnessctl_cmd.split())
     subprocess.Popen(["nm-applet"])
 
 
-##### STARTUP PROGRAMS Via autostart script#####
+# -<< STARTUP PROGRAMS VIA AUTOSTART SCRIPT >>-#
 
 @hook.subscribe.startup_once
 def start_once():
-	home = os.path.expanduser("~")
-	subprocess.call([home + "/.config/qtile/autostart.sh"])
+    home = os.path.expanduser("~")
+    subprocess.call([home + "/.config/qtile/autostart.sh"])
 
-# floating laoyout config
+# -<< floating laoyout config >>-#
+
 
 class FloatingLayout(layout.floating.Floating):
     pass
@@ -57,9 +56,10 @@ os.system("picom --config ~/.config/picom/picom.conf &")
 #  volume controls
 
 
-#open github
+# open github
 def open_github():
-     webbrowser.open_new_tab("https://github.com/darkxxdevs")
+    webbrowser.open_new_tab("https://github.com/darkxxdevs")
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -117,7 +117,7 @@ keys = [
     # running the monitor screen layout scripts
     Key([mod, "shift"], "s", lazy.spawn(
         "bash /home/darkxx/.screenlayout/monitor.sh")),
-    Key([mod, "shift"],"s",lazy.spawn("shutdown")),
+    Key([mod, "shift"], "s", lazy.spawn("shutdown")),
 
 ]
 
@@ -125,7 +125,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["I", "II", "III", "IV" , "V", "VI",]
+group_labels = ["I", "II", "III", "IV", "V", "VI",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
@@ -171,7 +171,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono Nerd Font Bold ",  
+    font="JetBrains Mono Nerd Font Bold ",
     fontsize=12,
     padding=1,
 )
@@ -182,18 +182,18 @@ separator_widget = widget.TextBox(
     text="|",
     fontsize=14,
     padding=5,
-    foreground="#ccc",
+    foreground="#9a989c",
     background="#1e1e2e"
 )
-icon_=widget.TextBox(
-        text="󰊢 ",
-        fontsize=20,
-        padding=2,
-        foreground="#dddddd",
-        mouse_callbacks={
-             "Button1":open_github
-        }
-        )
+icon_ = widget.TextBox(
+    text="󰊢 ",
+    fontsize=20,
+    padding=2,
+    foreground="#dddddd",
+    mouse_callbacks={
+        "Button1": open_github
+    }
+)
 sep3 = widget.TextBox(
     text="]",
     fontsize=14,
@@ -210,64 +210,65 @@ sep2 = widget.TextBox(
 )
 
 speaker_widget = widget.TextBox(
-    text="",
+    text="󰎈",
     foreground="#ed858a",
     fontsize=14,
     padding=5,
 )
-clock_widget=widget.TextBox(
+clock_widget = widget.TextBox(
     text="",
     foreground="#51afef",
     fontsize=12,
     padding=5,
 )
 win_layout = widget.TextBox(
-        text=" ",
-        foreground="#6bfff3",
-        fontsize=12,
-        padding=5,
-        )
-Spacer_ =widget.TextBox(
-        text=" ",
-        )
+    text=" ",
+    foreground="#6bfff3",
+    fontsize=12,
+    padding=5,
+)
+Spacer_ = widget.TextBox(
+    text=" ",
+)
 kernel_ = widget.TextBox(
-    text = " {}".format(getKernelVersion()),
-    foreground = "#a9a1e1",
-    background ="#1e1e2e",
-    padding =5,
+    text=" {}".format(getKernelVersion()),
+    foreground="#dbafa4",
+    background="#1e1e2e",
+    padding=5,
 )
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-            
+
                 Spacer_,
                 icon_,
                 # widget.Image(
-                    # filename="/home/darkxx/Downloads/pngfind.com-biohazard-symbol-png-1184605.png",
-                   
-                   # scale=True
+                # filename="/home/darkxx/Downloads/pngfind.com-biohazard-symbol-png-1184605.png",
+
+                # scale=True
                 # ),
                 widget.GroupBox(
                     the_current_screen_border='#6a0c8a',
                     inactive='#6a0c8a',
                     active="#ddd",
-                    margin_y =3,
-                    margin_x =0,
+                    margin_y=3,
+                    margin_x=0,
                     padding_y=5,
                     padding_x=3,
                     highlight_method="line",
                     highlight_color="#1e1e2e",
                     background="#1e1e2e"
-                    ),
+                ),
                 separator_widget,
                 widget.CurrentLayoutIcon(
-                    custom_icon_path= [os.path.expanduser("~/.config/qtile/icons")],
-                    foreground = "#ffffff",
-                    background = "#1e1e2e",
-                    padding = 0 , 
-                    scale= 0.7
+                    custom_icon_path=[os.path.expanduser(
+                        "~/.config/qtile/icons")],
+                    foreground="#ffffff",
+                    background="#1e1e2e",
+                    padding=0,
+                    scale=0.7
                 ),
                 widget.CurrentLayout(foreground="#ffffff"),
                 separator_widget,
@@ -284,7 +285,7 @@ screens = [
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                # sep3, 
+                # sep3,
                 # sep2,
                 # Spacer_,
                 separator_widget,
@@ -293,26 +294,26 @@ screens = [
                 speaker_widget,
                 widget.PulseVolume(
                     foreground="#ca757f"
-                    ),
+                ),
                 Spacer_,
                 Spacer_,
                 widget.Net(interface="wlan0",
-                           format = "  {down} ↓↑ {up}",
-                           padding = 2 ,
-                           foreground = "#ff6c6b",
-                           background = "#1e1e2e",
+                           format="  {down} ↓↑ {up}",
+                           padding=2,
+                           foreground="#b566ed",
+                           background="#1e1e2e",
                            ),
                 Spacer_,
                 Spacer_,
                 widget.Battery(
-                    low_foreground ="#ff0000",
-                    format =  '{char} {percent:2.0%}',
-                    charge_char = '🗲 ',
-                    discharge_char = ' ',
-                    low_percentage = 0.1 ,
-                    hide_threshold = None ,
+                    low_foreground="#ff0000",
+                    format='{char} {percent:2.0%}',
+                    charge_char='🗲 ',
+                    discharge_char=' ',
+                    low_percentage=0.1,
+                    hide_threshold=None,
                     foreground="#98be65"
-                    ),
+                ),
                 Spacer_,
                 Spacer_,
                 clock_widget,

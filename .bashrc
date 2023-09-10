@@ -13,6 +13,7 @@
 
 #!/bin/bash
 # starut p with my figlet
+#~/.config/echo-script
 ~/random_title
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -127,4 +128,9 @@ PATH=~/.console-ninja/.bin:$PATH
 # sttarship prompt for bash shell
 
 eval "$(starship init bash)"
+#adding path to lunr vim 
+export PATH="$HOME/.local/bin":$PATH
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
