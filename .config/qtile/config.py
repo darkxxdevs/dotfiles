@@ -173,7 +173,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono Nerd Font Bold ",
+    font="CaskaydiaCove Nerd Font  bold",
     fontsize=12,
     padding=1,
 )
@@ -185,11 +185,11 @@ separator_widget = widget.TextBox(
     fontsize=14,
     padding=5,
     foreground="#9a989c",
-    background="#1e1e2e"
+    background="#1a1b26"
 )
 icon_ = widget.TextBox(
-    text="󰊢 ",
-    fontsize=20,
+    text=" ",
+    fontsize=19,
     padding=2,
     foreground="#dddddd",
     mouse_callbacks={
@@ -201,14 +201,14 @@ sep3 = widget.TextBox(
     fontsize=14,
     padding=5,
     foreground="#ffc0cb",
-    background="#1e1e2e"
+    background="#1a1b26"
 )
 sep2 = widget.TextBox(
     text="[]=",
     fontsize=14,
     padding=5,
     foreground="#ffc0cb",
-    background="#1e1e2e"
+    background="#1a1b26"
 )
 
 speaker_widget = widget.TextBox(
@@ -235,7 +235,7 @@ Spacer_ = widget.TextBox(
 kernel_ = widget.TextBox(
     text=" {}".format(getKernelVersion()),
     foreground="#dbafa4",
-    background="#1e1e2e",
+    background="#1a1b26",
     padding=5,
 )
 
@@ -260,15 +260,15 @@ screens = [
                     padding_y=5,
                     padding_x=3,
                     highlight_method="line",
-                    highlight_color="#1e1e2e",
-                    background="#1e1e2e"
+                    highlight_color="#1a1b26",
+                    # background="#1e1e2e"
                 ),
                 separator_widget,
                 widget.CurrentLayoutIcon(
                     custom_icon_path=[os.path.expanduser(
                         "~/.config/qtile/icons")],
                     foreground="#ffffff",
-                    background="#1e1e2e",
+                    background="#1a1b26",
                     padding=0,
                     scale=0.7
                 ),
@@ -276,7 +276,10 @@ screens = [
                 separator_widget,
                 widget.Prompt(),
                 sep2,
-                widget.WindowName(foreground="#9cd3f7"),
+                widget.WindowName(foreground="#9cd3f7",
+                                  max_chars=12,
+
+                                  ),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -303,7 +306,7 @@ screens = [
                            format="  {down} ↓↑ {up}",
                            padding=2,
                            foreground="#b566ed",
-                           background="#1e1e2e",
+                           background="#1a1b26",
                            ),
                 Spacer_,
                 Spacer_,
@@ -311,7 +314,7 @@ screens = [
                     low_foreground="#ff0000",
                     format='{char} {percent:2.0%}',
                     charge_char='🗲 ',
-                    discharge_char=' ',
+                    discharge_char='',
                     low_percentage=0.1,
                     hide_threshold=None,
                     foreground="#98be65"
@@ -328,7 +331,7 @@ screens = [
             20,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background="#1e1e2e"
+            background="#1a1b26"
         )
     ),
 ]
