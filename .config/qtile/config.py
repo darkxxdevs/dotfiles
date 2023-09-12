@@ -12,7 +12,7 @@ import platform
 import psutil
 import subprocess
 import webbrowser
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -127,7 +127,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["I", "II", "III", "IV", "V", "VI",]
+group_labels = ["", "", "", "", "", "",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
@@ -277,7 +277,7 @@ screens = [
                 widget.Prompt(),
                 sep2,
                 widget.WindowName(foreground="#9cd3f7",
-                                  max_chars=12,
+                                  max_chars=20,
 
                                   ),
                 widget.Chord(
@@ -301,7 +301,20 @@ screens = [
                     foreground="#ca757f"
                 ),
                 Spacer_,
-                Spacer_,
+                widget.CheckUpdates(
+                    update_interval=1800,
+                    distro="Arch_checkupdates",
+                    display_format="   Updates: {updates} ",
+                    foreground="#ffffff",
+                    colour_have_updates="#ddd",
+                    colour_no_updates="#ffff",
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                        terminal + ' -e sudo pacman -Syu')},
+                    padding=3,
+                    background="#1a1b26"
+
+                ),
+
                 widget.Net(interface="wlan0",
                            format="  {down} ↓↑ {up}",
                            padding=2,
@@ -313,8 +326,8 @@ screens = [
                 widget.Battery(
                     low_foreground="#ff0000",
                     format='{char} {percent:2.0%}',
-                    charge_char='🗲 ',
-                    discharge_char='',
+                    charge_char='🗲',
+                    discharge_char='󰂁',
                     low_percentage=0.1,
                     hide_threshold=None,
                     foreground="#98be65"
