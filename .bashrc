@@ -123,7 +123,7 @@ function dotfiles() {
 }
 
 
-PATH=~/.console-ninja/.bin:$PATH
+
 
 # sttarship prompt for bash shell
 
