@@ -117,7 +117,9 @@ keys = [
     # grow window
     Key([mod], "h", lazy.layout.grow()),
     # shrink window
-    Key([mod], "l", lazy.layout.shrink())
+    Key([mod], "l", lazy.layout.shrink()),
+    # Floating windows
+    Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
 
 ]
 
