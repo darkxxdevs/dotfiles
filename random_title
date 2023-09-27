@@ -1,6 +1,6 @@
 #!/bin/bash
 
-words=(":)" "Linux" "cyb3r" "#Darkxx" "Tuxify" "tuxic" "Arch Btw !!" "rag0n1z3d" "L0L!!" "th3v3z" "bankai" "Gh0s1")
+words=(":)" "X)" "Linux" "cyb3r" "#Darkxx" "Tuxify" "tuxic" "Arch Btw !!" "rag0n1z3d" "L0L!!" "th3v3z" "bankai" "Gh0s1" "hacoor" "SYS" "phOnK" "bonk!" "dr6g0n1zed" "gh0ul")
 
 # Generate a random index
 random_index=$(( RANDOM % ${#words[@]} ))
@@ -8,5 +8,13 @@ random_index=$(( RANDOM % ${#words[@]} ))
 # Get the random tech word
 word=${words[$random_index]}
 
+# Fonts
+fonts=("bloody" "epic" "digital" "iso")
+
+# Get a random font
+random_font=$(( RANDOM % ${#fonts[@]} ))
+
+font=${fonts[$random_font]}
+
 # Display the tech word in figlet font
-figlet -f new "$word"
+figlet -f "$font" "$word"
