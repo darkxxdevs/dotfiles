@@ -343,6 +343,8 @@ screens = [
                 widget.Systray(),
             ],
             20,
+             border_width=[1, 0, 1, 0],  # Draw top and bottom borders
+             border_color=["ff00ff", "000000", "ff00ff", "000000"],  # Borders are magenta
             background="#1a1b26"
         )
     ),
