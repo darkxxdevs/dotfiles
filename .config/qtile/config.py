@@ -128,7 +128,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["", "", "", "", "", "",]
+group_labels = ["󰋙", "󰋙", "󰋙", "󰋙", "󰋙", "󰋙",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
