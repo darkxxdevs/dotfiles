@@ -1,6 +1,6 @@
 #!/bin/bash
 
-words=(":)" "X)" "Linux" "cyb3r" "#Darkxx" "Tuxify" "tuxic" "Arch Btw !!" "rag0n1z3d" "L0L!!" "th3v3z" "bankai" "Gh0s1" "hacoor" "SYS" "phOnK" "bonk!" "dr6g0n1zed" "gh0ul")
+words=(":)" "X)" "Linux" "cyb3r" "#Darkxx" "Tuxify" "tuxic" "Arch Btw !!" "rag0n1z3d" "L0L!!" "th3v3z" "bankai" "Gh0s1" "hacoor" "SYS" "phOnK" "bonk!" "dr6g0n1zed" "gh0ul" "microhard" "whoogle" "progizz" "lua" "Haskell" "Swift" "Octocat" "rizz")
 
 # Generate a random index
 random_index=$(( RANDOM % ${#words[@]} ))
