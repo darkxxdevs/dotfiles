@@ -128,7 +128,7 @@ keys = [
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6",]
-group_labels = ["󰋙", "󰋙", "󰋙", "󰋙", "󰋙", "󰋙",]
+group_labels = ["", "", "", "", "", "",]
 group_layouts = ["monadtall", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall",]
 
@@ -154,9 +154,8 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(border_focus_stack=["#fc05ec", "#fc05ec"], border_width=4),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
     layout.Stack(num_stacks=2, border_focus="#ffffff",
                  border_normal="#9e8d9d", border_width=2),
     layout.Bsp(),
@@ -174,7 +173,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="CaskaydiaCove Nerd Font  bold",
+    font="CaskaydiaCove Nerd Font bold",
     fontsize=12,
     padding=1,
 )
@@ -186,12 +185,12 @@ separator_widget = widget.TextBox(
     fontsize=14,
     padding=5,
     foreground="#9a989c",
-    background="#1a1b26"
+    background="#16161e"
 )
 icon_ = widget.TextBox(
     text=" ",
     fontsize=24,
-    padding=2,
+    padding=0,
     foreground="#dddddd",
     mouse_callbacks={
         "Button1": open_github
@@ -202,19 +201,19 @@ sep3 = widget.TextBox(
     fontsize=14,
     padding=5,
     foreground="#ffc0cb",
-    background="#1a1b26"
+    background="#16161e"
 )
 sep2 = widget.TextBox(
-    text="[]=",
+    text="󰋙=",
     fontsize=14,
     padding=5,
     foreground="#ffc0cb",
-    background="#1a1b26"
+    background="#16161e"
 )
 
 speaker_widget = widget.TextBox(
     text="󰎈",
-    foreground="#ed858a",
+    foreground="#e06c75",
     fontsize=14,
     padding=5,
 )
@@ -230,16 +229,27 @@ win_layout = widget.TextBox(
     fontsize=12,
     padding=5,
 )
+cpu_widget = widget.TextBox(
+    text=" ",
+    foreground="#abb2bf",
+    fontsize=12,
+    padding=2,
+)
 Spacer_ = widget.TextBox(
     text=" ",
 )
 kernel_ = widget.TextBox(
     text=" {}".format(getKernelVersion()),
     foreground="#dbafa4",
-    background="#1a1b26",
+    background="#16161e",
     padding=5,
 )
-
+user = widget.TextBox(
+    text="darkxxdevs",
+      mouse_callbacks={
+        "Button1": open_github
+    }
+)
 screens = [
     Screen(
         top=bar.Bar(
@@ -247,11 +257,8 @@ screens = [
 
                 Spacer_,
                 icon_,
-                # widget.Image(
-                # filename="/home/darkxx/Downloads/pngfind.com-biohazard-symbol-png-1184605.png",
-
-                # scale=True
-                # ),
+                user,
+                Spacer_,
                 widget.GroupBox(
                     the_current_screen_border='#6a0c8a',
                     inactive='#6a0c8a',
@@ -261,7 +268,7 @@ screens = [
                     padding_y=5,
                     padding_x=3,
                     highlight_method="line",
-                    highlight_color="#1a1b26",
+                    highlight_color="#16161e",
                     # background="#1e1e2e"
                 ),
                 separator_widget,
@@ -269,16 +276,15 @@ screens = [
                     custom_icon_path=[os.path.expanduser(
                         "~/.config/qtile/icons")],
                     foreground="#ffffff",
-                    background="#1a1b26",
+                    background="#16161e",
                     padding=0,
                     scale=0.7
                 ),
-                widget.CurrentLayout(foreground="#ffffff"),
                 separator_widget,
-                widget.Prompt(),
+
                 sep2,
                 widget.WindowName(foreground="#9cd3f7",
-                                  max_chars=20,
+                                  max_chars=15,
 
                                   ),
                 widget.Chord(
@@ -287,19 +293,20 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                # widget.TextBox("default config", name="default"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                # sep3,
-                # sep2,
-                # Spacer_,
-                separator_widget,
+                # separator_widget,
                 kernel_,
                 Spacer_,
                 speaker_widget,
                 widget.PulseVolume(
-                    foreground="#ca757f"
+                    foreground="#e06c75"
+                ),
+                Spacer_,
+                Spacer_,
+                cpu_widget,
+                widget.Memory(
+                    foreground="#abb2bf",
+                    measure_mem='M',
+                    paddin=0
                 ),
                 Spacer_,
                 widget.CheckUpdates(
@@ -312,7 +319,7 @@ screens = [
                     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
                         terminal + ' -e sudo pacman -Syu')},
                     padding=3,
-                    background="#1a1b26"
+                    background="#16161e"
 
                 ),
 
@@ -320,7 +327,7 @@ screens = [
                            format="  {down} ↓↑ {up}",
                            padding=2,
                            foreground="#b566ed",
-                           background="#1a1b26",
+                           background="#16161e",
                            ),
                 Spacer_,
                 Spacer_,
@@ -343,7 +350,7 @@ screens = [
                 widget.Systray(),
             ],
             20,
-            background="#1a1b26"
+            background="#16161e"
         )
     ),
 ]
