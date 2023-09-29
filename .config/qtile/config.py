@@ -189,7 +189,7 @@ separator_widget = widget.TextBox(
 )
 icon_ = widget.TextBox(
     text=" ",
-    fontsize=15,
+    fontsize=20,
     padding=0,
     foreground="#dddddd",
     mouse_callbacks={
@@ -248,7 +248,8 @@ user = widget.TextBox(
     text="darkxxdevs",
       mouse_callbacks={
         "Button1": open_github
-    }
+    },
+    fontsize=10
 )
 screens = [
     Screen(
@@ -309,19 +310,19 @@ screens = [
                     paddin=0
                 ),
                 Spacer_,
-                widget.CheckUpdates(
-                    update_interval=1800,
-                    distro="Arch_checkupdates",
-                    display_format="   Updates: {updates} ",
-                    foreground="#ddd",
-                    colour_have_updates="#ddd",
-                    colour_no_updates="#ddd",
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
-                        terminal + ' -e sudo pacman -Syu')},
-                    padding=3,
-                    background="#16161e"
+                # widget.CheckUpdates(
+                    # update_interval=1800,
+                    # distro="Arch_checkupdates",
+                    # display_format="   Updates: {updates} ",
+                    # foreground="#ddd",
+                    # colour_have_updates="#ddd",
+                    # colour_no_updates="#ddd",
+                    # mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                        # terminal + ' -e sudo pacman -Syu')},
+                    # padding=3,
+                    # background="#16161e"
 
-                ),
+                # ),
 
                 widget.Net(interface="wlan0",
                            format="  {down} ↓↑ {up}",
