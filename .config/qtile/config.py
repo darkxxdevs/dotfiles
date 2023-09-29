@@ -188,8 +188,8 @@ separator_widget = widget.TextBox(
     background="#16161e"
 )
 icon_ = widget.TextBox(
-    text=" ",
-    fontsize=24,
+    text=" ",
+    fontsize=15,
     padding=0,
     foreground="#dddddd",
     mouse_callbacks={
