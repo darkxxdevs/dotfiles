@@ -154,16 +154,16 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(border_focus_stack=["#fc05ec", "#fc05ec"], border_width=4),
+    layout.Columns(border_focus_stack=["#e1acff", "#e1acff"], border_width=4),
     layout.Max(),
     layout.Stack(num_stacks=2, border_focus="#ffffff",
                  border_normal="#9e8d9d", border_width=2),
     layout.Bsp(),
     layout.Matrix(),
-    layout.MonadTall(border_focus="#fc05ec",
+    layout.MonadTall(border_focus="#e1acff",
                      border_normal="#9e8d9d", border_width=2, margin=7),
     layout.MonadWide(),
-    layout.RatioTile(border_focus="#fc05ec",
+    layout.RatioTile(border_focus="#e1acff",
                      border_normal="#9e8d9d", border_width=2),
     layout.Tile(),
     layout.TreeTab(),
@@ -297,7 +297,7 @@ screens = [
                 kernel_,
                 Spacer_,
                 speaker_widget,
-                widget.PulseVolume(
+                widget.Volume(
                     foreground="#e06c75"
                 ),
                 Spacer_,
@@ -313,9 +313,9 @@ screens = [
                     update_interval=1800,
                     distro="Arch_checkupdates",
                     display_format="   Updates: {updates} ",
-                    foreground="#ffffff",
+                    foreground="#ddd",
                     colour_have_updates="#ddd",
-                    colour_no_updates="#ffff",
+                    colour_no_updates="#ddd",
                     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
                         terminal + ' -e sudo pacman -Syu')},
                     padding=3,
