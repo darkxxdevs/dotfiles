@@ -81,14 +81,6 @@ Follow these steps to manually install the dotfiles:
 
 If you encounter issues, have suggestions for improvements, or wish to contribute to these dotfiles, please open an issue or submit a pull request on the repository.
 
-## License
-
-This project is licensed under the [MIT License](./LICENSE).
-
-## Acknowledgments
-
-I extend my gratitude to the open-source community and the developers behind the tools and utilities that made these configurations possible.
-
 ---
 
 Thank you for exploring my Dotfiles repository! I trust you'll discover something useful or inspiring here. Should you require assistance or have inquiries, don't hesitate to reach out.
