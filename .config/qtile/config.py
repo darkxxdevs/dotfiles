@@ -1,23 +1,19 @@
-########################################
-#  ██████╗ ████████╗██╗██╗     ███████╗#
-# ██╔═══██╗╚══██╔══╝██║██║     ██╔════╝#
-# ██║   ██║   ██║   ██║██║     █████╗  #
-# ██║▄▄ ██║   ██║   ██║██║     ██╔══╝  #
-# ╚██████╔╝   ██║   ██║███████╗███████╗#
-#  ╚══▀▀═╝    ╚═╝   ╚═╝╚══════╝╚══════╝#
-########################################
-## imports ##
+#########################################
+##  ██████╗ ████████╗██╗██╗     ███████╗##
+## ██╔═══██╗╚══██╔══╝██║██║     ██╔════╝##
+## ██║   ██║   ██║   ██║██║     █████╗  ##
+## ██║▄▄ ██║   ██║   ██║██║     ██╔══╝  ##
+###╚██████╔╝   ██║   ██║███████╗███████╗##
+####╚══▀▀═╝    ╚═╝   ╚═╝╚══════╝╚══════╝##
+##########################################
+##--- imports---##
 import os
 import platform
-import psutil
 import subprocess
 import webbrowser
+from libqtile.lazy import lazy
 from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
-from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.widget import CPUGraph, Volume, base, TextBox, Battery
-from qtile_extras.widget.decorations import RectDecoration, PowerLineDecoration, BorderDecoration
 
 
 mod = "mod4"  # -> setting mod key to windows key
