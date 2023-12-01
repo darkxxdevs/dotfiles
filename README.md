@@ -4,11 +4,7 @@
 
 Welcome to my Dotfiles repository! This repository holds my configuration files for various Linux utilities and window managers. It includes configurations for qtile, bash , picom and a collection of wallpapers.
 
-## Installation
-
-To use these dotfiles on your system, you have two options for installation: manual installation and automated installation using a script.
-
-### Manual Installation
+###  Installation
 
 Follow these steps to manually install the dotfiles:
 
@@ -25,15 +21,6 @@ Follow these steps to manually install the dotfiles:
 
      ```
      cp  .bashrc ~/
-     ```
-
-3. **Fish Configuration:**
-
-   - (if applicable )
-   - Copy the `fish` file to your fish configuration directory:
-
-     ```
-     cp  .config/fish/ ~/.config/fish/
      ```
 
 4. **Qtile Configuration:**
