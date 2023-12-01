@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my Dotfiles repository! This repository holds my configuration files for various Linux utilities and window managers. It includes configurations for zsh, fish, qtile, i3wm, and a collection of wallpapers.
+Welcome to my Dotfiles repository! This repository holds my configuration files for various Linux utilities and window managers. It includes configurations for qtile, bash , picom and a collection of wallpapers.
 
 ## Installation
 
@@ -21,14 +21,15 @@ Follow these steps to manually install the dotfiles:
 
 2. **Zsh Configuration:**
 
-   - Copy the `.zshrc` file to your home directory:
+   - Copy the `.bashrc` file to your home directory:
 
      ```
-     cp  .zshrc ~/
+     cp  .bashrc ~/
      ```
 
 3. **Fish Configuration:**
 
+   - (if applicable )
    - Copy the `fish` file to your fish configuration directory:
 
      ```
@@ -43,21 +44,14 @@ Follow these steps to manually install the dotfiles:
      cp -r .config/qtile/ ~/.config/qtile/
      ```
 
-5. **i3wm Configuration:**
-
-   - Copy the `i3/` directory to your i3wm configuration directory:
-
-     ```
-     cp -r ./config/i3/  ~/.config/i3/
-     ```
-6. **kitty Configuration:**
+5. **kitty Configuration:**
    - Copy the `kitty/` directory to your kitty config directory:
 
      ```
       cp .config/kitty/  ~/.config/kitty/
      ```
 
-7. **Starship Prompt Config:**
+6. **Starship Prompt Config:**
    - Copy the `starship.toml` file to your config directory:
 
     ```
@@ -65,26 +59,16 @@ Follow these steps to manually install the dotfiles:
     ```
 
 
-8. **Wallpapers:**
+7. **Wallpapers:**
 
-   - The `my_walls/` directory contains a collection of wallpapers. Feel free to use and customize them as you like.
+   - The `Wallpapers/` directory contains a collection of wallpapers. Feel free to use and customize them as you like.
 
-### Automated Installation (Not Tested)
 
-Please note that the following installation script has not been tested and may fail. Use it at your own risk.
-
-1. **Clone the repository:**
+**Clone the repository:**
 
    ```
    git clone https://github.com/darkxxdevs/dotfiles.git
    cd dotfiles
-   ```
-
-2. **Run the installation script:**
-
-   ```
-   chmod +x install.sh
-   ./install.sh
    ```
 
 ## Additional Information
@@ -111,4 +95,4 @@ Thank you for exploring my Dotfiles repository! I trust you'll discover somethin
 
 Enjoy the customization process!
 
-\- DARKXX
+\- Arpit Yadav
