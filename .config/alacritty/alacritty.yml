@@ -169,7 +169,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x0d1117'
+    background: '#0f1014'
     foreground: '0xc9d1d9'
 
   # Cursor colors

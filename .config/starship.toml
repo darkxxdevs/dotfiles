@@ -1,15 +1,18 @@
 [character]
-success_symbol= "[󰶻](bold grey)"
+success_symbol= "[](bold )"
 
-error_symbol="[󰶻](bold white)"
+error_symbol="[](bold white)"
+
+
 
 
 [username]
-style_user = 'grey bold'
+style_user = 'white bold'
 style_root = 'black bold'
-format = '[󰭟 ]($style) '
+format = '[󰛸 --]($style) '
 disabled = false
 show_always = true
+
 
 
 
@@ -29,7 +32,7 @@ deleted = '🗑'
 
 
 [bun]
-format = 'via [󰯰 $version](bold green) '
+format = 'via [🍙 $version](bold green) '
 
 [aws]
 symbol = "  "
@@ -167,5 +170,4 @@ symbol = "󱘗 "
 
 [scala]
 symbol = " "
-
 
