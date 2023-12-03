@@ -19,9 +19,9 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, 
 mod = "mod4"  # -> setting mod key to windows key
 terminal = "alacritty"  # -> default terminal setting
 
-# ->> setting the  function to get the latest kernel version
 
 
+#getting the kernel version
 def getKernelVersion():
     return platform.release()
 
