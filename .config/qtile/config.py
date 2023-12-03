@@ -16,12 +16,15 @@ from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 
 
-mod = "mod4"  # -> setting mod key to windows key
-terminal = "alacritty"  # -> default terminal setting
+# setting up the mod key 
+mod = "mod4"  
+
+#setting up the default terminal 
+terminal = "alacritty"  
 
 
 
-#getting the kernel version
+#getting the kernel version 
 def getKernelVersion():
     return platform.release()
 
