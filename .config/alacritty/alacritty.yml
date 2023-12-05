@@ -1,4 +1,4 @@
-# config for alacritty a gpu enhanced terminal emulator
+#alacritty config
 
 env:
     # TERM variable
