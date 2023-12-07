@@ -113,18 +113,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-# my alias
-alias vim='nvim'
 
 #dotfiles management function in the home directory 
 function dotfiles() {
   git --git-dir=$HOME/dotfiles --work-tree=$HOME "$@"
 }
-
-
-PATH=~/.console-ninja/.bin:$PATH
-
-PATH=~/.config/emacs/bin:$PATH
 
 # sttarship prompt for bash shell
 
@@ -136,4 +129,6 @@ export PATH="$HOME/.local/bin":$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+# alacritty scripts runing 
+alias vim='~/.config/alacritty/scripts/nvim.sh'
 
