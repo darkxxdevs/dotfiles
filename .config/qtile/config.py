@@ -16,15 +16,13 @@ from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 
 
-# setting up the mod key 
+# Defaults 
 mod = "mod4"  
-
-#setting up the default terminal 
 terminal = "alacritty"  
 
 
 
-#getting the kernel version 
+#getting the kernel version
 def getKernelVersion():
     return platform.release()
 
@@ -49,6 +47,9 @@ def start_once():
 
 class FloatingLayout(layout.floating.Floating):
     pass
+
+#ScratchPads
+
 
 
 # picom setup
@@ -106,6 +107,8 @@ keys = [
         "pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([mod], "space", lazy.group["scratchpad"].dropdown_toggle("term")),
+
 ]
 
 
