@@ -13,7 +13,8 @@ import subprocess
 import webbrowser
 from libqtile.lazy import lazy
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
+from qtile_extras.widget.decorations import RectDecoration
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 
 
 # Defaults 
@@ -233,7 +234,6 @@ user = widget.TextBox(
     fontsize=10
 )
 
-
 screens = [
     Screen(
         top=bar.Bar(
@@ -261,7 +261,7 @@ screens = [
                     foreground="#ffff",
                     background="#0f1014",
                     padding=0,
-                    scale=0.7
+                    scale=0.7,
                 ),
                 separator_widget,
                 widget.WindowName(foreground="#9cd3f7",

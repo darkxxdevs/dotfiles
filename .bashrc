@@ -91,7 +91,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls='if [ "$(pwd)" = "$HOME" ]; then command ls --color=auto --ignore="*.md"; else command ls --color=auto; fi'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -122,7 +121,6 @@ function dotfiles() {
 # sttarship prompt for bash shell
 
 eval "$(starship init bash)"
-#adding path to lunr vim 
 export PATH="$HOME/.local/bin":$PATH
 
 # bun

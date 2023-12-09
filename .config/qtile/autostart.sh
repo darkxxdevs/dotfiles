@@ -1,5 +1,6 @@
 #! /bin/bash 
 
+exec dunst &
 
 exec mpv --no-video ~/.config/startupSounds/psp_startup_sound.mp3 & 
 
