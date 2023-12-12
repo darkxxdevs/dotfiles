@@ -88,6 +88,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -127,6 +128,4 @@ export PATH="$HOME/.local/bin":$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
-# alacritty scripts runing 
-alias vim='~/.config/alacritty/scripts/nvim.sh'
 

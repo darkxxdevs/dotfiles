@@ -13,7 +13,6 @@ import subprocess
 import webbrowser
 from libqtile.lazy import lazy
 from libqtile import bar, layout, widget, hook, qtile
-from qtile_extras.widget.decorations import RectDecoration
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 
 
@@ -21,7 +20,8 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 mod = "mod4"  
 terminal = "alacritty"  
 
-
+if(terminal== "alacritty"):
+   print("its alacritty")
 
 
 #getting the kernel version
@@ -163,6 +163,7 @@ layouts = [
 
 widget_defaults = dict(
     font="CaskaydiaCove Nerd Font bold",
+    # font="JetBrainsMono NF ExtraBold",
     fontsize=12,
     padding=1,
 )
