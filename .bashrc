@@ -1,4 +1,4 @@
-#######################################################
+#####################################################
 #######################################################
 ##   ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗##   
 ##   ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝##   
@@ -92,7 +92,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias vim='nvim' 
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -129,3 +129,5 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 
+
+[ -f "/home/darkxxdevs/.ghcup/env" ] && source "/home/darkxxdevs/.ghcup/env" # ghcup-env
