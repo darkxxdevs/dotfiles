@@ -101,8 +101,6 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn("shutdown")),
     Key([mod], "h", lazy.layout.grow()),
     Key([mod], "l", lazy.layout.shrink()),
-    Key([mod], "f", lazy.window.toggle_floating(
-        border_focus="#fff"), desc="Toggle floating"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ +5%")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(
@@ -110,6 +108,9 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle")),
     Key([mod], "space", lazy.group["scratchpad"].dropdown_toggle("term")),
+    Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
+
+
 
 ]
 
