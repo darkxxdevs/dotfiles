@@ -10,19 +10,18 @@
 
 # IMPORTS
 
-from libqtile.dgroups import simple_key_binder
 import os
-import re
 import socket
 import platform
 import webbrowser
 import subprocess
+from typing import List 
 from libqtile import qtile
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
-from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
 from libqtile.lazy import lazy
-from typing import List  # noqa: F401
+from libqtile.command import lazy
+from libqtile.dgroups import simple_key_binder
+from libqtile import layout, bar, widget, hook
+from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
 
 
 # CONTROLERS SETTINGS
@@ -102,7 +101,9 @@ y = (1 - height) / 2
 groups = [Group("DEV", layout='monadtall'),
           Group("WEB", layout='monadtall'),
           Group("DEV", layout='monadtall'),
+          Group("CODE", layout='monadtall'),
           Group("EXE", layout='monadtall'),
+          Group("FIX", layout='monadtall'),
           Group("EWW", layout='monadtall'),
           Group("AI", layout='floating'),
 
@@ -127,7 +128,7 @@ groups = [Group("DEV", layout='monadtall'),
 
 dgroups_key_binder = simple_key_binder("mod4")
 
-layout_theme = {"border_width": 1,
+layout_theme = {"border_width": 2,
                 "margin": 7,
                 "border_focus": "#e1acff",
                 "border_normal": "#1D2330"
@@ -191,7 +192,7 @@ widget_defaults = dict(
 
 icon_ = widget.TextBox(
     text=" ",
-    fontsize=20,
+    fontsize=22,
     padding=0,
     foreground="#dddddd",
     background=colors[0],
@@ -208,7 +209,7 @@ kernel_ = widget.TextBox(
     padding=5,
 )
 
-Spacer_ = widget.TextBox(
+userName_ = widget.TextBox(
     text=" ",
     background=colors[0]
 )
@@ -220,11 +221,16 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-        Spacer_,
+        widget.Sep(
+            linewidth=0,
+            padding=4,
+            foreground="#debfff",
+            background=colors[0]
+        ),
         icon_,
         widget.Sep(
             linewidth=0,
-            padding=2,
+            padding=1,
             foreground="#debfff",
             background=colors[0]
         ),
@@ -281,7 +287,7 @@ def init_widgets_list():
         kernel_,
         widget.Sep(
             linewidth=0,
-            padding=6,
+            padding=2,
             foreground=colors[0],
             background=colors[0]
         ),
