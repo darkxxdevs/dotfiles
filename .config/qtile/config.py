@@ -99,12 +99,12 @@ y = (1 - height) / 2
 
 # WORKSPACES
 
-groups = [Group("1", layout='monadtall'),
-          Group("2", layout='monadtall'),
-          Group("3", layout='monadtall'),
-          Group("4", layout='monadtall'),
-          Group("5", layout='monadtall'),
-          Group("6", layout='floating'),
+groups = [Group("DEV", layout='monadtall'),
+          Group("WEB", layout='monadtall'),
+          Group("DEV", layout='monadtall'),
+          Group("EXE", layout='monadtall'),
+          Group("EWW", layout='monadtall'),
+          Group("AI", layout='floating'),
 
           ScratchPad(
     "drxterm",
@@ -278,20 +278,7 @@ def init_widgets_list():
             padding=0,
             max_chars=16
         ),
-
-        widget.Sep(
-            linewidth=0,
-            padding=6,
-            foreground=colors[0],
-            background=colors[0]
-        ),
-        widget.GenPollText(
-            update_interval=300,
-            func=lambda: subprocess.check_output("printf $(uname -r)" , shell=True , text=True),
-            foreground="#dbafa4",
-            background=colors[0],
-            fmt='{}',
-        ),
+        kernel_,
         widget.Sep(
             linewidth=0,
             padding=6,
@@ -398,7 +385,8 @@ def init_widgets_list():
         ),
         widget.Systray(
             background=colors[0],
-            padding=5
+            padding=5,
+            foreground=colors[3],
         ),
     ]
     return widgets_list
