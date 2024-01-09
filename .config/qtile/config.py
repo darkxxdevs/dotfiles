@@ -21,7 +21,7 @@ from libqtile.lazy import lazy
 from libqtile.command import lazy
 from libqtile.dgroups import simple_key_binder
 from libqtile import layout, bar, widget, hook
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen, ScratchPad, DropDown
+from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad, DropDown
 
 
 # CONTROLERS SETTINGS
@@ -85,7 +85,11 @@ keys = [
     Key([mod], "h", lazy.layout.grow()),
     Key([mod], "l", lazy.layout.shrink()),
     Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([mod], "space", lazy.group['drxterm'].dropdown_toggle("myTerm")),
+    Key([] , "XF86AudioRaiseVolume" , lazy.spawn("amixer set Master 5%+")),
+    Key([] , "XF86AudioLowerVolume" , lazy.spawn("amixer set Master 5%-")),
 ]
 
 # calculations for the screen size
