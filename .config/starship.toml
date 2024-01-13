@@ -1,17 +1,13 @@
 [character]
-success_symbol= "[󰵉 󰑃](bold purple)"
-error_symbol="[󰵉 󰑃](bold red)"
-
-
-[username]
-style_user = 'grey bold'
-style_root = 'black bold'
-format = '[ ::]($style) '
-disabled = false
-show_always = true
+success_symbol= "[󰑃](bold purple)"
+error_symbol="[󰑃](bold red)"
 
 
 
+[directory]
+read_only = " 󰌾"
+truncation_length = 1
+truncation_symbol = ''
 
 [git_status]
 conflicted = '🏳'
@@ -45,8 +41,6 @@ symbol = " "
 [dart]
 symbol = " "
 
-[directory]
-read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
