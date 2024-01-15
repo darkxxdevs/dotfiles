@@ -28,7 +28,7 @@ from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad,
 
 mod = "mod4"
 myTerm = "alacritty"
-myBrowser = "brave"
+myBrowser = "firefox"
 
 
 # OPEN GITHUB
@@ -90,6 +90,7 @@ keys = [
     Key([mod], "space", lazy.group['drxterm'].dropdown_toggle("myTerm")),
     Key([] , "XF86AudioRaiseVolume" , lazy.spawn("amixer set Master 5%+")),
     Key([] , "XF86AudioLowerVolume" , lazy.spawn("amixer set Master 5%-")),
+    Key([mod], "b" , lazy.spawn(myBrowser) )
 ]
 
 # calculations for the screen size
@@ -195,7 +196,7 @@ widget_defaults = dict(
 )
 
 icon_ = widget.TextBox(
-    text=" ",
+    text="󰘯 ",
     fontsize=22,
     padding=0,
     foreground="#dddddd",
