@@ -29,18 +29,15 @@ from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad,
 mod = "mod4"
 myTerm = "alacritty"
 myBrowser = "firefox"
+myGithubUrl ="https://github.com/darkxxdevs" 
 
 
 # OPEN GITHUB
-
-
 def open_github():
-    webbrowser.open_new_tab("https://github.com/darkxxdevs")
+    webbrowser.open_new_tab(myGithubUrl)
 # KEYBINDINGS
 
 # get kernel version
-
-
 def getKernelVersion():
     return platform.release()
 
@@ -90,12 +87,13 @@ keys = [
     Key([mod], "space", lazy.group['drxterm'].dropdown_toggle("myTerm")),
     Key([] , "XF86AudioRaiseVolume" , lazy.spawn("amixer set Master 5%+")),
     Key([] , "XF86AudioLowerVolume" , lazy.spawn("amixer set Master 5%-")),
-    Key([mod], "b" , lazy.spawn(myBrowser) )
+    Key([mod], "b" , lazy.spawn(myBrowser) ),
+	Key([mod], "g" , lazy.spawn(f"{myBrowser} {myGithubUrl}"))
 ]
 
 # calculations for the screen size
-screen_width = 1920
-screen_height = 1080
+screen_width = 1366
+screen_height = 768
 width = 0.6
 height = 0.4
 x = (1 - width) / 2
