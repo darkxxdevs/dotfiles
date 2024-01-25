@@ -17,12 +17,10 @@ import webbrowser
 import subprocess
 from typing import List 
 from libqtile import qtile
-from libqtile.lazy import lazy
 from libqtile.command import lazy
 from libqtile.dgroups import simple_key_binder
 from libqtile import layout, bar, widget, hook
 from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad, DropDown
-
 
 # CONTROLERS SETTINGS
 
@@ -35,7 +33,6 @@ myGithubUrl ="https://github.com/darkxxdevs"
 # OPEN GITHUB
 def open_github():
     webbrowser.open_new_tab(myGithubUrl)
-# KEYBINDINGS
 
 # get kernel version
 def getKernelVersion():
