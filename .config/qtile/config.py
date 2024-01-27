@@ -26,7 +26,7 @@ from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad,
 
 mod = "mod4"
 myTerm = "alacritty"
-myBrowser = "firefox"
+myBrowser = "brave"
 myGithubUrl ="https://github.com/darkxxdevs" 
 
 
@@ -85,8 +85,7 @@ keys = [
     Key([] , "XF86AudioRaiseVolume" , lazy.spawn("amixer set Master 5%+")),
     Key([] , "XF86AudioLowerVolume" , lazy.spawn("amixer set Master 5%-")),
     Key([mod], "b" , lazy.spawn(myBrowser) ),
-	Key([mod], "g" , lazy.spawn(f"{myBrowser} {myGithubUrl}"))
-]
+)]
 
 # calculations for the screen size
 screen_width = 1366
