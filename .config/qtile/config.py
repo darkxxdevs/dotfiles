@@ -85,7 +85,7 @@ keys = [
     Key([] , "XF86AudioRaiseVolume" , lazy.spawn("amixer set Master 5%+")),
     Key([] , "XF86AudioLowerVolume" , lazy.spawn("amixer set Master 5%-")),
     Key([mod], "b" , lazy.spawn(myBrowser) ),
-)]
+]
 
 # calculations for the screen size
 screen_width = 1366
