@@ -177,7 +177,13 @@ colors = [["#0f1014", "#0f1014",],
           ["#51afef", "#51afef"],
           ["#c678dd", "#c678dd"],
           ["#46d9ff", "#46d9ff"],
-          ["#a9a1e1", "#a9a1e1"]]
+          ["#a9a1e1", "#a9a1e1"],
+		  ["#dddddd" , "#dddddd"],
+		  ["#dbafa4" , "#dbafa4"],
+		  ["#abb2bf" , "#abb2bf"],
+		  ["#9a989c" , "#9a989c"],
+		  ["#debfff", "#debfff"],
+]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
@@ -193,7 +199,7 @@ icon_ = widget.TextBox(
     text="󰘯 ",
     fontsize=22,
     padding=0,
-    foreground="#dddddd",
+    foreground=colors[10],
     background=colors[0],
     mouse_callbacks={
         "Button1": open_github
@@ -203,7 +209,7 @@ icon_ = widget.TextBox(
 
 kernel_ = widget.TextBox(
     text="  {}".format(getKernelVersion()),
-    foreground="#dbafa4",
+    foreground=colors[11],
     background="#0f1014",
     padding=5,
 )
@@ -223,14 +229,14 @@ def init_widgets_list():
         widget.Sep(
             linewidth=0,
             padding=4,
-            foreground="#debfff",
+            foreground=colors[14],
             background=colors[0]
         ),
         icon_,
         widget.Sep(
             linewidth=0,
             padding=1,
-            foreground="#debfff",
+            foreground=colors[14],
             background=colors[0]
         ),
         widget.GroupBox(
@@ -256,7 +262,7 @@ def init_widgets_list():
         widget.TextBox(
             text='|',
             font="Ubuntu Mono",
-            foreground="#9a989c",
+            foreground=colors[13],
             background=colors[0],
             padding=5,
             fontsize=14
@@ -273,7 +279,7 @@ def init_widgets_list():
             text='|',
             font="Ubuntu Mono",
             background=colors[0],
-            foreground="#9a989c",
+            foreground=colors[13],
             padding=2,
             fontsize=14
         ),
@@ -304,7 +310,7 @@ def init_widgets_list():
         ),
         
         widget.Memory(
-            foreground="#abb2bf",
+            foreground=colors[12],
             background=colors[0],
             mouse_callbacks={
                 'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e gotop')},
