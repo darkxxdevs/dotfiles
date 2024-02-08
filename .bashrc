@@ -83,7 +83,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vim='lvim' 
+alias vim='nvim' 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -113,8 +113,9 @@ export PATH="$HOME/.config/emacs/bin":$PATH
 
 export PATH="$HOME/.local/bin":$PATH
 
-#eval "$(starship init bash)"
+eval "$(starship init bash)"
 
+uptime
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
