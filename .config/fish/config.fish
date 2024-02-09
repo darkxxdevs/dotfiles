@@ -14,6 +14,7 @@ end
 set fish_greeting
 
 #echo "i use arch btw!!! >_<"
+uptime
 
 #initializing the starship prompt 
 starship init fish | source
