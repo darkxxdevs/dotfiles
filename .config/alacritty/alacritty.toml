@@ -40,11 +40,11 @@ family = "JetBrainsMono NF"
 
 [font.bold_italic]
 family = "JetBrainsMono NF"
-style = "Bold Italic"
+style = "Regular"
 
 [font.italic]
 family = "JetBrainsMono NF"
-style = "Italic"
+style = "Regular"
 
 [font.normal]
 family = "JetBrainsMono NF SemiBold"
@@ -60,5 +60,5 @@ dynamic_title = true
 startup_mode = "Maximized"
 
 [window.padding]
-x = 10
+x = 1
 y = 0
