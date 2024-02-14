@@ -33,22 +33,22 @@ TERM = "alacritty"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [font]
-size = 11
+size = 10.6
 
 [font.bold]
-family = "JetBrainsMono NF"
+family = "SF mono"
 
 [font.bold_italic]
-family = "JetBrainsMono NF"
-style = "Regular"
+family = "SF mono"
+style = "SemiBold"
 
 [font.italic]
-family = "JetBrainsMono NF"
+family = "SF mono"
 style = "Regular"
 
 [font.normal]
-family = "JetBrainsMono NF SemiBold"
-style = "Regular"
+family = "SF mono"
+style = "SemiBold"
 
 [selection]
 save_to_clipboard = true
