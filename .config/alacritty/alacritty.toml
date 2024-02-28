@@ -22,7 +22,8 @@ red = "0xe33333"
 white = "0xb1bac4"
 
 [colors.primary]
-background = "#0f1014"
+# background = "#0f1014"
+background = "#0a0b0c"
 foreground = "#cccccc"
 
 [cursor.style]
@@ -36,18 +37,18 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 size = 10.6
 
 [font.bold]
-family = "SF mono"
+family = "Liga SFMono Nerd Font"
 
 [font.bold_italic]
-family = "SF mono"
+family = "Liga SFMono Nerd Font"
 style = "SemiBold"
 
 [font.italic]
-family = "SF mono"
+family = "Liga SFMono Nerd Font"
 style = "Regular"
 
 [font.normal]
-family = "SF mono"
+family = "Liga SFMono Nerd Font"
 style = "SemiBold"
 
 [selection]
