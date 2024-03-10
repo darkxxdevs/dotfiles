@@ -25,7 +25,8 @@ from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad,
 # CONTROLERS SETTINGS
 
 mod = "mod4"
-myTerm = "alacritty"
+myTerm = "wezterm"
+myAltTerm="wezterm-gui"
 myBrowser = "brave"
 myGithubUrl ="https://github.com/darkxxdevs" 
 
@@ -60,13 +61,8 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch terminal"),
+    Key([mod , "shift"], "Return", lazy.spawn(myAltTerm), desc="Launch alternate terminal"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
