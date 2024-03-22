@@ -37,18 +37,18 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 size = 10.6
 
 [font.bold]
-family = "Liga SFMono Nerd Font"
+family = "JetBrainsMono NF SemiBold"
 
 [font.bold_italic]
-family = "Liga SFMono Nerd Font"
+family = "JetBrainsMono NF SemiBold"
 style = "SemiBold"
 
 [font.italic]
-family = "Liga SFMono Nerd Font"
+family = "JetBrainsMono NF SemiBold"
 style = "Regular"
 
 [font.normal]
-family = "Liga SFMono Nerd Font"
+family = "JetBrainsMono NF SemiBold"
 style = "SemiBold"
 
 [selection]

@@ -25,8 +25,8 @@ from libqtile.config import Click, Drag, Group,  Key, Match, Screen, ScratchPad,
 # CONTROLERS SETTINGS
 
 mod = "mod4"
-myTerm = "wezterm"
-myAltTerm="wezterm-gui"
+myTerm = "alacritty"
+myAltTerm="warp-terminal"
 myBrowser = "brave"
 myGithubUrl ="https://github.com/darkxxdevs" 
 
