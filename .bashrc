@@ -79,7 +79,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ls='ls --color=auto'
+alias ls='eza --icons'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -109,17 +109,23 @@ function dotfiles() {
   git --git-dir=$HOME/dotfiles --work-tree=$HOME "$@"
 }
 
+
 export PATH="$HOME/.config/emacs/bin":$PATH
 
 export PATH="$HOME/.local/bin":$PATH
 
 eval "$(starship init bash)"
 
-uptime
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+gci(){
+	 $HOME/go/bin/golangci-lint
+}
+dlv(){
+	 $HOME/go/bin/dlv
+}
 
 # node version manager 
 
@@ -127,3 +133,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
+
+export SRC_ACCESS_TOKEN=msgp_a0d7ccb4f752ea73_263ebf65c3ad6def150cdd887ef5b69708541404
+export SRC_ENDPOINT=https://sourcegraph.com/users/darkxxdevs
